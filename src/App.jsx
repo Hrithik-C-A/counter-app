@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import Button from './components/Button'
 import Counter from './components/counter'
 function App() {
@@ -15,7 +16,7 @@ function App() {
   }
   return (
     <div>
-      <Counter classes={'mt-32'} count={count}/>
+      <Counter classes={`mt-32 ${count > 5 ? 'text-blue-500' : 'text-black'}`} count={count}/>
       <div className='mt-8 flex justify-center gap-3'>
         <Button classes={'bg-yellow-500'} btnName={'Increment'} onClick={increment}/>
         <Button classes={'bg-black text-white'} btnName={'Reset'} onClick={reset}/>
